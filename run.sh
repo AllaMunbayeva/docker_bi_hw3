@@ -7,7 +7,8 @@ elif [ "$1" = "run_generator" ]; then
   docker run --rm -v "$(pwd)/data:/data" data_generator
 
 elif [ "$1" = "create_local_data" ]; then
-  python generator/generate.py data
+  mkdir -p local_data
+  python generator/generate.py local_data
 
 elif [ "$1" = "build_reporter" ]; then
   docker build -t data_reporter ./reporter
@@ -22,6 +23,7 @@ elif [ "$1" = "structure" ]; then
 elif [ "$1" = "clear_data" ]; then
   rm -f data/*.csv
   rm -f data/*.html
+  rm -f local_data/*.csv
   echo "Папка data очищена"
 
 elif [ "$1" = "inside_generator" ]; then
