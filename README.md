@@ -5,3 +5,4 @@ https://help.sweb.ru/osnovy-bash-v-linux-rukovodstvo-po-napisaniyu-skriptov_1293
 https://skillbox.ru/media/code/chto-takoe-linux-bash-i-kak-im-polzovatsya/#stk-3
 а также доп. ресурсы, которые были указаны в семинаре по докеру.
 строка -v "$(pwd)/data:/data нужна была для подключения локальной папки data внутрь контейнера как /data
+также добавлен строка find . -maxdepth 3 -type f -not -path "./.git/*" в команде структура, чтобы не выводить служебные файлы гит, так как они не относятся к структуре проекта.

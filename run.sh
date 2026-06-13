@@ -18,7 +18,7 @@ elif [ "$1" = "run_reporter" ]; then
 
 elif [ "$1" = "structure" ]; then
   echo "Структура проекта:"
-  find . -maxdepth 3 -type f
+  find . -maxdepth 3 -type f -not -path "./.git/*"
 
 elif [ "$1" = "clear_data" ]; then
   rm -f data/*.csv
